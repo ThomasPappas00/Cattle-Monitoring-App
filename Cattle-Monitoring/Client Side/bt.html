@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Cow </title>
+        <meta charset="utf-8">
+       
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="stylesheet" href="style2.css">
+        <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <style>
+            
+        body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 2%;
+        }
+        
+        
+
+        @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+            }
+
+        </style>
+
+
+
+     </head>
+     
+     <body>
+        <h1 style="text-align: left; "> myCow    <img src="cowMain.png" style="position:left;" /> </h1>
+        <div id="info"></div>
+        <br>
+        <div id="info" class="headerAdd"><h3>Προσθήκη ζώου</h3> </div>
+           <div class="fr">
+                <br>
+                <div>
+                    <label class="galazio">1ο Βήμα: αισθητήρας</label><br>
+                </div>
+
+                <div>
+                    <label for="sensorId">Id Αισθητήρα:</label>
+                    <input type="number" min="31" max="100" id="sensorId" name="sensorId" style="position:left ;"  ><br>
+                </div>
+
+                <div>
+                    <label for="herd" >Κοπάδι ζώου: </label>
+                    <input type="number" min="1" max="3" id="herd" name="herd"><br>
+                </div>
+                <button type="submit" id= "postSensorButton"  onclick="postSensor();" >  Δημιουργία αισθητήρα </button>
+
+            </div>
+            <br><br>
+            <div class="fr">
+                <div>
+                    <label class="galazio">2ο Βήμα: ταυτότητα ζώου </label><br>
+                </div>
+
+                <div>
+                    <label for="cowId">Id Ζώου:</label>
+                    <input type="number" min="21" max="100" id="cowId" name="cowId" style="position:right ;"  ><br>
+                </div>
+
+                <div>
+                    <label for="sensId">Id Αισθητήρα: </label>
+                    <input type="number" min="31" max="100" id="sensId" name="sensId" style="position:left ;"  ><br>
+                </div>
+
+                <div>
+                    <label for="herd2">Κοπάδι ζώου: </label>
+                    <input type="number" min="1" max="3" id="herd2" name="herd2"><br>
+                </div>
+
+                <div>
+                    <label for="birth_date"> Ημερομηνία γέννησης:</label>
+                    <input type="date" id="birth_date" name="birth_date">  <br>
+                </div>
+
+                <div>
+                    <label for="father_id">Αριθμός πατέρα / Id:  </label>
+                    <input type="number" min="1" max="100" id="father_id" name="father_id"><br>
+                </div>
+
+                <div>
+                    <label for="mother_id" >Αριθμός μητέρας / Id:   </label>
+                    <input type="number" min="1" max="100" id="mother_id" name="mother_id"><br>
+                </div>
+
+                <div>
+                    <label for="IBRList" >Εμβόλιο IBR  :   </label>
+                    <select id = "IBRList">
+                        <option disabled selected value>Επιλογή  </option>
+                        <option value = true>Ναι</option>
+                        <option value = false>Όχι</option><br>   
+                    </select>
+                </div>
+
+                <div>
+                    <label for="BVDList" >Εμβόλιο BVD  :   </label>
+                    <select id = "BVDList">
+                        <option disabled selected value>  Επιλογή  </option>
+                        <option value = true>Ναι</option>
+                        <option value = false>Όχι</option><br>   
+                    </select>
+                </div>
+
+                <div>
+                    <label for="PI3List" >Εμβόλιο PI3 :   </label>
+                    <select id = "PI3List">
+                        <option disabled selected value> Επιλογή  </option>
+                        <option value = true>Ναι</option>
+                        <option value = false>Όχι</option> <br>   
+                    </select>
+                </div>
+
+                <div>
+                    <label for="BRSVList" >Εμβόλιο BRSV  :   </label>
+                    <select id = "BRSVList">
+                        <option disabled selected value>  Επιλογή  </option>
+                        <option value = true>Ναι</option>
+                        <option value = false>Όχι</option> <br>   
+                    </select>
+                </div>
+
+                <div>
+                    <label for="sickList" >Είναι άρρωστο:    </label>
+                    <select id = "sickList">
+                        <option disabled selected value> Επιλογή </option>
+                        <option value = true>Ναι</option>
+                        <option value = false>Όχι</option> <br>   
+                    </select>
+                </div>
+
+                <div>
+                    <label for="birthList" >Έχει γεννήσει :    </label>
+                    <select id = "birthList">
+                        <option disabled selected value>    Επιλογή    </option>
+                        <option value = true>Ναι</option>
+                        <option value = false>Όχι</option> <br>   
+                    </select>
+                </div>
+
+                <div>
+                    <label for="sexList" > Φύλο:   </label>
+                    <select id = "sexList">
+                        <option disabled selected value>   Επιλογή  </option>
+                        <option value ="F" >Θηλυκό</option>
+                        <option value = "M">Αρσενικό</option> <br>   
+                    </select>
+                </div>
+
+                <div>
+                    <label for="milkProduction"> Παραγωγή γάλακτος (μονάδα lt/day) </label>
+                    <input type="number" min="0" max="300" id="milkProduction" name="milkProduction">  <br>
+                </div>
+        
+                
+                <button  id= "postAnimalbutton"  onclick="postAnimal();"  > Προσθήκη νέου ζώου</button> 
+                <br><br>
+                <button  class="back" id= "backbutton"  onclick="back();"  > Τέλος της προσθήκης ζώου</button>
+            </div>
+            <br><br><br>
+
+
+
+
+
+      
+       
+        <script type="text/javascript">
+            console.log("script running");
+                
+            async function postSensor(){  
+        
+                 var valueHerd=parseInt(document.getElementById("herd").value);
+                 var valueSnrId=parseInt(document.getElementById("sensorId").value);
+                console.log("sensor"+valueSnrId+"typos toy");
+                console.log(typeof valueSnrId);
+                console.log("herd"+valueHerd+"typos toy");
+                console.log(typeof valueHerd);
+
+                const response =await   fetch('http://150.140.255.134//CattleMonitoring/accessSensor', {
+                    mode:'no-cors',
+                     method: "post",
+                     headers: { "Content-Type": "application/json" },
+                     body: JSON.stringify({"command":"postsensor","body":{"sensor_id": valueSnrId,"herd": valueHerd}}
+                 )}).then(resp => { 
+                     console.log("Status: " + resp.body)
+                 }).then(dataJson => {
+                     dataReceived = JSON.parse(dataJson)
+                     console.log("last then")
+                }).catch((error) => { //3 new lines
+                    console.error("Error:"+ error);
+                    //alert("Error:"+ error);
+                    alert("Ο αισθητήρας προστέθηκε με επιτυχία. Προχωρήστε στο 2ο βημα.")
+                })
+            }           
+
+
+            async function postAnimal(){ 
+                var ibr,bvd,pi3,brsv,sick,sex,birth;
+
+   
+     
+                var valuecowId=parseInt(document.getElementById("cowId").value);
+                var valueHerd2=parseInt(document.getElementById("herd2").value);
+                var valueSnr=parseInt(document.getElementById("sensId").value);
+                var valuebirth_date=document.getElementById("birth_date").value;
+                var valuefather_id=parseInt(document.getElementById("father_id").value);
+                var valuemother_id=parseInt(document.getElementById("mother_id").value);
+                var valueIBR_vacc=document.getElementById("IBRList").value;
+                ibr=(valueIBR_vacc==="true");
+                var valueBVD_vacc=document.getElementById("BVDList").value;
+                bvd=(valueBVD_vacc==="true");
+                var valuePI3_vacc=document.getElementById("PI3List").value;
+                pi3=(valuePI3_vacc==="true");
+                var valueBRSV_vacc=document.getElementById("BRSVList").value;
+                brsv=(valueBRSV_vacc==="true");
+                var valuesick=document.getElementById("sickList").value;
+                sick=(valuesick==="true");
+                var valuegiven_birth=document.getElementById("birthList").value;
+                birth=(valuegiven_birth==="true");
+
+                sex=document.getElementById("sexList").value;
+                
+                var valuemilkProduction=document.getElementById("milkProduction").value+" litres/day";
+    
+
+
+                console.log("cow"+valuecowId+"typos toy");
+                console.log(typeof valuecowId);
+                console.log("herd"+valueHerd2+"typos toy");
+                console.log(typeof valueHerd2);
+                console.log("sensor"+valueSnr+"typos toy");
+                console.log(typeof valueSnr);
+                console.log("birth_date"+valuebirth_date+"typos toy");
+                console.log(typeof valuebirth_date);
+                console.log("father"+valuefather_id+"typos toy");
+                console.log(typeof valuefather_id);
+                console.log("mother"+valuemother_id+"typos toy");
+                console.log(typeof valuemother_id);
+                console.log("IBR"+ibr+"typos toy");
+                console.log(typeof ibr);
+                console.log("BVD"+bvd+"typos toy");
+                console.log(typeof bvd);
+                console.log("PI3"+pi3+"typos toy");
+                console.log(typeof pi3);
+                console.log("BRSV"+brsv+"typos toy");
+                console.log(typeof brsv);
+                console.log("SICK"+sick+"typos toy");
+                console.log(typeof sick);
+                console.log("given birth  "+  birth+  "   typos toy");
+                console.log(typeof birth);
+        
+                console.log("fylo"+sex+"typos toy");
+                console.log(typeof sex);
+                console.log("milk production"+valuemilkProduction+   "  typos toy");
+                console.log(typeof valuemilkProduction);
+
+
+                //check the strings - if "" is needed
+                const response =await   fetch('http://150.140.255.134//CattleMonitoring/accessAnimal', {
+                     mode:'no-cors',
+                    method: "post",
+                     headers: { "Content-Type": "application/json" },
+                     body:  JSON.stringify({"command":"postanimal","body":{"id":valuecowId,"herd":valueHerd2,"sensor_id":valueSnr,
+                     "history":{"birth_date":valuebirth_date,"father_id":valuefather_id,
+                     "mother_id":valuemother_id,"IBR_vacc":ibr,
+                     "BVD_vacc":bvd,"PI3_vacc":pi3,
+                     "BRSV_vacc":brsv,
+                    "sick":sick,"given_birth":birth},
+                    "sex":sex,"milkProduction":valuemilkProduction}})
+                }).then(resp => { console.log("Status: " + resp.body)
+                }).then(dataJson => {
+                     dataReceived = JSON.parse(dataJson)
+                }).catch((error) => { //3 new lines
+                    console.error('Error:', error);
+                    //alert("Error:"+ error);
+                    alert("Το ζώο προστέθηκε με επιτυχία.")
+                 })
+                
+      
+
+            }
+
+async function deleteAnimal(){  
+    
+    const response =await   fetch('http://150.140.255.134//CattleMonitoring/accessAnimal/id?id=22'+noAnimal, {
+        mode:'cors',
+        method: 'delete',
+       headers: { "Content-Type": "application/json" },
+       // body: JSON.stringify({"command":"postsensor","body":{"sensor_id":22,"herd":3}})
+    }).then(resp => {
+        if (resp.status === 200) {
+            return resp.json()
+        } else {
+            console.log("Status: " + resp.status+resp)
+            //return Promise.reject("server")
+        }
+    }).then(dataJson => {
+        dataReceived = JSON.parse(dataJson)
+    })
+    
+}
+
+        function back()
+        {
+            window.location.href = "herd.html";
+        }
+
+        
+        
+        
+    </script>
+
+        
+     
+
+
+    </body>
+</html>

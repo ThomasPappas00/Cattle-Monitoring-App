@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Cow </title>
+        <meta charset="utf-8">
+       
+        <script src="ex.js"></script>  
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            
+        body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        
+
+        @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+            }
+
+        </style>
+
+
+
+     </head>
+     
+    <body>
+        <input type="text" id="sensorId" name="sensorId" style="position:left ;"  >
+     
+  
+     <input type="text" id="herd" name="herd">
+        <button type="submit" id= "postSensorButton"  onclick="postSensor();" ></button>
+
+        <br>
+        Id Ζώου: <input type="text" id="cowId" name="cowId" style="position:right ;"  > <br>
+        Id Αισθητήρα: <input type="text" id="sensId" name="sensId" style="position:left ;"  ><br>
+        Κοπάδι ζώου: <input type="text" id="herd2" name="herd2"><br>
+        Ημερομηνία γέννησης: <input type="text" id="birth_date" name="birth_date">      <br>
+        Όνομα πατέρα: <input type="text" id="father_id" name="father_id" style="position:right ;"><br>
+        Όνομα μητέρας: <input type="text" id="mother_id" name="mother_id"> <br>
+        Εμβόλιο IBR  : <select id = "IBRList">
+            <option disabled selected value>Επιλογή  </option>
+            <option value = true>Ναι</option>
+            <option value = false>Όχι</option>
+        </select><br>
+        Εμβόλιο BVD  : <select id = "BVDList">
+             <option disabled selected value>  Επιλογή  </option>
+            <option value = true>Ναι</option>
+             <option value = false>Όχι</option>
+            </select><br>
+        Εμβόλιο BRSV  :  <select id = "BRSVList">
+                <option disabled selected value>  Επιλογή  </option>
+                <option value = true>Ναι</option>
+                <option value = false>Όχι</option>
+            </select><br>
+            Εμβόλιο PI3 : <select id = "PI3List">
+                <option disabled selected value> Επιλογή  </option>
+                <option value = true>Ναι</option>
+                <option value = false>Όχι</option>  <!--    <input type="text" id="PI3_vacc" name="PI3_vacc">  -->     </th>    
+            </select>   <br>
+            
+
+        Είναι άρρωστο:   <select id = "sickList">
+                    <option disabled selected value> Επιλογή </option>
+                    <option value = true>Ναι</option>
+                    <option value = false>Όχι</option> 
+                </select><br>
+         Έχει γεννήσει  <select id = "birthList">
+                    <option disabled selected value>    Επιλογή    </option>
+                    <option value = true>Ναι</option>
+                    <option value = false>Όχι</option>
+                    
+                  </select><br>
+        Φύλο:    
+                <select id = "sexList">
+                    <option disabled selected value>   Επιλογή  </option>
+                  <option value ="F" >Θηλυκό</option>
+                  <option value = "M">Αρσενικό</option>
+                  
+                </select> <br>
+         Παραγωγή γάλακτος (μονάδα lt/day)   <input type="text" id="milkProduction" name="milkProduction">   <br>
+         <button  id= "postAnimalbutton"  onclick="postAnimal();"  > Προσθήκη νέου ζώου</button>
+    </body>
+</html>

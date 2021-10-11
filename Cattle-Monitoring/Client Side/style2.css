@@ -1,0 +1,28 @@
+body {
+    background-image: url("wideField.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center right;
+  }
+  .galazio{
+    background-color: #119ca8
+    ;
+}
+.fr{
+
+    padding-left: 40px;
+    padding-right: 40px;
+    text-align: left;
+}
+
+.headerAdd{
+    text-align: left;
+    padding-left: 60px;
+}
+
+.back{
+
+    text-align: center;
+    background-color: #119ca8;
+    
+}

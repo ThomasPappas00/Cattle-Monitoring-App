@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+        <meta charset="utf-8">
+       
+        
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            
+        body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        
+
+        @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+            }
+
+        </style>
+
+
+
+     </head>
+     
+    <body>
+
+        <button  id= "deleteAnimalbutton"  onclick="deleteAnimal();"  > Διαγραφή ζώου</button>
+
+        <script>
+            async function deleteAnimal(){  
+    
+                const response =await   fetch('http://150.140.254.134//CattleMonitoring/accessAnimal/id?id=26', {
+                     mode:"cors",
+                    method: "delete",
+                     headers: { "Content-Type": "application/json" },
+                     //body: JSON.stringify({"command":"deleteanimal","body":{"id":26}})
+                }).then(resp => { console.log("Status: " + resp.body)
+                }).then(dataJson => {
+                     dataReceived = JSON.parse(dataJson)
+                     console.log(dataReceived);
+                 }).catch((error) => { //3 new lines
+                     console.error('Error:', error);
+                        //alert("Error:"+ error);
+                    alert("error")
+                })
+            }
+
+
+
+
+
+        </script>
+
+    </body>
+</html>

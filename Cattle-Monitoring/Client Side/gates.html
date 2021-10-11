@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+
+<body>
+ <label for="noGate">Choose gate</label>
+ <input type="number" min="1" max="4" id="noGate" name="noGate"><br><br>
+ <label for="statusList" > Gate state :   </label>
+                    <select id = "statusList">
+                        <option disabled selected value>Επιλογή  </option>
+                        <option value = true>Open</option>
+                        <option value = false>Close</option><br>   
+                    </select> <br><br>
+ <button  id= "postGatebutton"  onclick="postGate();"  > Change gate status</button> 
+ 
+    
+</body>
+
+<script type="text/javascript">
+console.log("script running");
+window.onload= () => {
+    getGate();
+    
+};
+                
+        async function getGate(){  
+              const response =await   fetch('http://150.140.254.134//CattleMonitoring/accessGates', {mode:'cors'},{headers : { 
+             'Content-Type': 'json/aplication'}   }
+              ).then(res => res.json()
+                ).then((data)=>
+                 {
+                for( var i in data){
+            myArray=data[i];
+             }})  
+             console.log(myArray);
+             alert("The gates were sucessfully loaded")
+  
+        }           
+    
+    
+        async function postGate(){ 
+                    
+             var valueGate=parseInt(document.getElementById("noGate").value);
+             var vState=document.getElementById("statusList").value;
+             valueState=(vState==="true");
+             
+             console.log("gate"+valueGate+"typos toy");
+             console.log(typeof valueGate);
+             console.log("state"+valueState+"typos toy");
+             console.log(typeof valueState);
+                
+                    
+            const response =await   fetch('http://150.140.254.134//CattleMonitoring/accessGate/id?id='+ valueGate, {
+                    mode:'no-cors',
+                     method: "post",
+                    headers: { "Content-Type": "application/json" },
+                    body:  JSON.stringify({"command":"postgate","body":{"gate_id":valueGate,"isOpen":valueState}})
+                    }).then(resp => { console.log("Status: " + resp.body)
+                    }).then(dataJson => {
+                         dataReceived = JSON.parse(dataJson)
+                    }).catch((error) => { //3 new lines
+                        console.error('Error:', error);
+                        //alert("Error:"+ error);
+                        alert("Τhe gate"+valueGate+" is now open")
+                     })
+    
+          
+    
+                }
+    
+    
+    
+    
+            
+            
+
+
+</script>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Cow </title>
+        <meta charset="utf-8">
+        
+        
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            
+        body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        
+
+        @media screen and (max-height: 450px) {
+            .sidenav {padding-top: 15px;}
+            .sidenav a {font-size: 18px;}
+            }
+
+        </style>
+
+
+
+     </head>
+     
+    <body>
+        <h1 style="text-align: left; "> myCow    <img src="cowMain.png" style="position:left;" /> </h1>
+        <div id="info"></div>
+        <form id="form" style="align-items: center;" style="position:right ;">
+           <h2 style="text-align: center";> <div id="info"> Προσθήκη ζώου</div></h2> 
+
+           <table class="details table-striped" >
+            <tr  class="bg-info">
+                <th style="text-align:left ; ">1ο Βήμα: αισθητήρας </th>
+                
+                <th>2ο Βήμα:ταυτότητα ζώου </th>
+            </tr>	
+
+            <tr >
+                <th>Id Αισθητήρα: <input type="text" id="sensorId" name="sensorId" style="position:left ;"  >
+                </th>
+                
+                <th>Id Ζώου: <input type="text" id="cowId" name="cowId" style="position:right ;"  >
+                </th>
+           </tr>
+
+            <tr  >
+                <th>Κοπάδι ζώου: <input type="text" id="herd" name="herd">
+                </th>
+                <th>Id Αισθητήρα: <input type="text" id="sensorIdA" name="sensorIdA" style="position:left ;"  >
+                </th>
+            </tr>
+
+            <tr  >
+                <th>  <button type="submit" id= "postSensor"   >  Δημιουργία αισθητήρα </button></th>
+                <th>Κοπάδι ζώου: <input type="text" id="herd" name="herd">
+            </tr>
+            <tr>
+                <th></th>
+                <th> Ημερομηνία γέννησης: <input type="text" id="birth_date" name="birth_date">      </th>
+            </tr>
+            <tr>
+                <th>
+                </th>
+                <th>Όνομα πατέρα: <input type="text" id="father_id" name="father_id" style="position:right ;">  </th>
+            </tr>
+
+            <tr >
+                <th></th>
+                <th> Όνομα μητέρας: <input type="text" id="mother_id" name="mother_id"> </th>    
+                    
+            </tr>   
+
+
+            
+            <tr >
+                <th></th>
+                <th> Εμβόλιο IBR (True/False) :  <input type="text" id="IBR_vacc" name="IBR_vacc">  </th>    
+                    
+            </tr>  
+
+            <tr >
+                <th></th>
+                <th> Εμβόλιο BVD (True/False) :  <input type="text" id="BVD_vacc" name="BVD_vacc">  </th>    
+                    
+            </tr>  
+
+            <tr >
+                <th></th>
+                <th>  Εμβόλιο PI3 (True/False) :    <input type="text" id="PI3_vacc" name="PI3_vacc">       </th>    
+                    
+            </tr>  
+
+            <tr >
+                <th></th>
+                <th>   Εμβόλιο BRSV (True/False) :     <input type="text" id="BRSV_vacc" name="BRSV_vacc">          </th>    
+                    
+            </tr>  
+
+            <tr >
+                <th></th>
+                <th>  Είναι άρρωστο (True/False) ?      <input type="text" id="sick" name="sick">          </th>    
+                    
+            </tr>  
+
+            <tr >
+                <th></th>
+                <th>  Έχει γεννήσει  (True/False) ?       <input type="text" id="given_birth" name="given_birth">         </th>    
+                    
+            </tr>  
+
+            <tr >
+                <th></th>
+                <th> Φύλο:           <input type="text" id="sex" name="sex">      </th>    
+                    
+            </tr>  
+
+            <tr >
+                <th></th>
+                <th>  Παραγωγή γάλακτος (μονάδα lt/day)   <input type="text" id="milkProduction" name="milkProduction">            </th>    
+                    
+            </tr>  
+
+
+            <tr >
+                <th></th>
+
+                <th>  <button  id= "postAnimal"   > Προσθήκη νέου ζώου</button></th>
+            </tr>
+            <tbody id="myTable">
+        
+            </tbody>
+        </table>
+
+
+
+
+
+        </form>
+       
+        
+        
+                
+        
+        
+
+
+        
+        <script type="text/javascript">
+        console.log("outside function");
+        document.getElementById("postAnimal").onclick=clickEvent;
+
+async function clickEvent(){
+    console.log("inside function");
+    
+    
+var valueSnrId=parseInt(document.getElementById("sensorIdA").value);
+var valueId=parseInt(document.getElementById("cowId").value);
+var valueHerd=parseInt(document.getElementById("herd").value);
+ var valueSnrId=parseInt(document.getElementById("sensorIdA").value);
+var valuebirth_date=parseInt(document.getElementById("birth_date").value);
+var valuefather_id=parseInt(document.getElementById("father_id").value);
+var valuemother_id=parseInt(document.getElementById("mother_id").value);
+var valueIBR_vacc=document.getElementById("IBR_vacc").value;
+var valueBVD_vacc=document.getElementById("BVD_vacc").value;
+var valuePI3_vacc=document.getElementById("PI3_vacc").value;
+var valueBRSV_vacc=document.getElementById("BRSV_vacc").value;
+var valuesick=document.getElementById("sick").value;
+var valuegiven_birth=document.getElementById("given_birth").value;
+var valuesex=document.getElementById("sex").value;
+var valuemilkProduction=parseInt(document.getElementById("milkProduction").value);
+var isTrueSetmilk = (valuemilkProduction == 'true');
+
+console.log(valueId);
+console.log(typeof valuegiven_birth);
+console.log(valueSnrId);
+console.log(typeof isTrueSetmilk);
+console.log(isTrueSetmilk);
+console.log(valuebirth_date);
+console.log(valuefather_id);
+console.log(valuemother_id);
+console.log(valueIBR_vacc);
+console.log(valueBVD_vacc);
+console.log(valuePI3_vacc);
+console.log(valueBRSV_vacc);
+console.log(valuesick);
+console.log(valuegiven_birth);
+console.log(valuesex);
+console.log(valuemilkProduction);
+console.log("--------------------------");
+
+const response =await fetch('http://150.140.254.218//CattleMonitoring/accessAnimal', {
+    mode:'no-cors',
+    method: "post",
+    headers: { "Content-Type": "application/json" },
+    body:  {"command":"postanimal","body":{"id":valueId,"herd":valueHerd,"sensor_id":valueSnrId,
+    "history":{"birth_date":"valuebirth_date","father_id":valuefather_id,
+    "mother_id":valuemother_id,"IBR_vacc":valueIBR_vacc,
+    "BVD_vacc":valueBVD_vacc,"PI3_vacc":valuePI3_vacc,
+    "BRSV_vacc":valueBRSV_vacc,
+    "sick":valuesick,"given_birth":valuegiven_birth},
+    "sex":valuesex,"milkProduction":valuemilkProduction}}
+})
+    .then(resp => {
+        if (resp.status === 200) {
+            return resp.json()
+        } else {
+            console.log("Status: " + resp.status)
+            return Promise.reject("server")
+        }
+    })
+    .then(dataJson => {
+        dataReceived = JSON.parse(dataJson)
+    })
+    .catch(err => {
+        if (err === "server") return
+        console.log(err)
+    })
+}
+        
+        
+        </script>  
+
+
+    </body>
+</html>
