@@ -3,7 +3,7 @@ A prototype IoT system that can be utilzied by cattlemen/ranchers/farmers for mo
 
 ## Description
 This system tackles some big concerns for ranchers/livestock breeders/farmers that maintain their business in huge areas by providing crucial information at the user’s web browser. Keeping track of the herds’ whereabouts, informing on the individual animal’s medical/vaccination history and security as long as the barn safety (environmental monitoring) and providing automation on gates and milking infrastructure with specific actuators. The Google Maps API is used for the map visualizations. 
-Microsoft SQL Server is used for the database, Java for the back-end and the world simulator and HTML/CSS/Javascript for the front-end.
+Microsoft SQL Server is used for the database, Java for the back-end (Apache Tomcat v9.0) and the world simulator and HTML/CSS/Javascript for the front-end. 
 
 
 ### Monitoring Animals
@@ -41,6 +41,16 @@ Microsoft SQL Server is used for the database, Java for the back-end and the wor
 •	Gates (open-close)
 
 ![image](https://github.com/ThomasPappas00/Cattle-Monitoring-App/assets/75483971/4c4f8119-2bca-4684-9f1b-e0f929e1939a)
+
+## Runtime 
+A simulated farm starts when executing the _initFarm_ module. Three milk pumps are created and a number of animals with random history, random sensor data and a random location inside the farm. The _Simulator_ module gives life to the farm. Animals move around, have their colar sensor data changed and go for milking at the three pumps. The _AccessSensor_ servlet handles requests for the client to get a sensor with specific id, add a new sensor to the system and delete a sensor using the _http://{{ip}}/CattleMonitoring/accessSensor/_ endpoint. In general, the simple API of the app is:
+
+| Paths                             | Methods       |
+| -------------                     |:-------------:| 
+| /CattleMonitoring/accessSensor/   | GET, POST, DELETE |
+| /CattleMonitoring/accessSensors/  | GET    
+| zebra stripes | are neat      |    $1 |
+
 
 ## Demo
 https://github.com/ThomasPappas00/Cattle-Monitoring-App/assets/75483971/34be87f9-de9c-4278-a7c1-4133d547be96
