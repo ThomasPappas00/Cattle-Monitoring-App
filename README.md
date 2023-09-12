@@ -1,4 +1,4 @@
-# Smart Agriculture Monitoring Cattle in Real Time
+# Smart Agriculture - Monitoring Cattle in Real Time
 A prototype IoT system that can be utilzied by cattlemen/ranchers/farmers for monitoring their animals' and farms' live data.
 
 ## Description
