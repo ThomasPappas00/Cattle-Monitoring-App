@@ -3,7 +3,7 @@ A prototype IoT system that can be utilzied by cattlemen/ranchers/farmers for mo
 
 ## Description
 This system tackles some big concerns for ranchers/livestock breeders/farmers that maintain their business in huge areas by providing crucial information at the user’s web browser. Keeping track of the herds’ whereabouts, informing on the individual animal’s medical/vaccination history and security as long as the barn safety (environmental monitoring) and providing automation on gates and milking infrastructure with specific actuators. The Google Maps API is used for the map visualizations. 
-Microsoft SQL Server is used for the database, Java for the back-end (Apache Tomcat v9.0) and the world simulator and HTML/CSS/Javascript for the front-end. 
+Microsoft SQL Server is used for the database, Java for the HTTP server and the world simulator and HTML/CSS/Javascript for the front-end. 
 
 
 ### Monitoring Animals
@@ -55,8 +55,7 @@ A simulated farm starts when executing the _initFarm_ module. Three milk pumps a
 | /CattleMonitoring/accessMilkPump/  | GET   | 
 
 ### Instructions
-Microsoft SQL Server and Java Tomcat Server are prerequisites for the machine that hosts the back-end. The database should first be enabled as a windows service (MSSQLSERVER → Start). Then, open the project in eclipse and put the 4 jars in the classpath of the project files located in the C:\...\CattleMonitoring\WebContent\WEB INF\lib folder. JDBC is the driver enabling the communication with the database, while the Jackson libraries are used for converting objects to JSON and vice versa. Next, we create a Tomcat v9.0 Server at localhost from eclipse and add the CattleMonitoring project to the server. We start the server (Start) and the see the message _INFO: Server 
-startup in [xxxx] milliseconds_ in the eclipse console. To create a new farm with x number of animals we run InitFarm and change numOfAnimals = x. To start the emulator and begin life on the farm we run the _Simulator_. The server is now ready to serve requests.
+Microsoft SQL Server and Java Runtime Environment are prerequisites for the machine that hosts the back-end. The database should first be enabled as a windows service (MSSQLSERVER → Start). Then, open the project in eclipse and put the 4 jars in the classpath of the project files located in the C:\...\CattleMonitoring\WebContent\WEB INF\lib folder. JDBC is the driver enabling the communication with the database, while the Jackson libraries are used for converting objects to JSON and vice versa. Next, we create a Tomcat v9.0 Server at localhost from eclipse and add the CattleMonitoring project to the server. We start the server (Start) and the see the message _INFO: Server startup in [xxxx] milliseconds_ in the eclipse console. To create a new farm with x number of animals we run InitFarm and change numOfAnimals = x. To start the emulator and begin life on the farm we run the _Simulator_. The server is now ready to serve requests.
 
 ## Demo
 https://github.com/ThomasPappas00/Cattle-Monitoring-App/assets/75483971/34be87f9-de9c-4278-a7c1-4133d547be96
