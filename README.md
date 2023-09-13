@@ -60,3 +60,5 @@ Microsoft SQL Server and Java Runtime Environment are prerequisites for the mach
 ## Demo
 https://github.com/ThomasPappas00/Cattle-Monitoring-App/assets/75483971/34be87f9-de9c-4278-a7c1-4133d547be96
 
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
