@@ -43,7 +43,7 @@ Microsoft SQL Server is used for the database, Java for the HTTP server and the 
 ![image](https://github.com/ThomasPappas00/Cattle-Monitoring-App/assets/75483971/4c4f8119-2bca-4684-9f1b-e0f929e1939a)
 
 ## Runtime 
-A simulated farm starts when executing the _initFarm_ module. Three milk pumps are created and a number of animals (belonging in various herds) with random history, random sensor data and a random location inside the farm. The _Simulator_ module gives life to the farm. Animals move around, have their colar sensor data changed and go for milking at the three pumps. The _AccessSensor_ servlet handles requests for the _client_ to get a sensor with specific id, add a new sensor to the system and delete a sensor using the _http://{{ip}}/CattleMonitoring/accessSensor/_ endpoint. In general, the API of the app is:
+A simulated farm starts when executing the _initFarm_ module. Three milk pumps are created and a number of animals (belonging in various herds) with random history, random sensor data and a random location inside the farm. The _Simulator_ module gives life to the farm. Animals move around, have their colar sensor data changed and go for milking at the three pumps. The _AccessSensor_ servlet handles requests for the _client_ to get a sensor with specific id, add a new sensor to the system and delete a sensor using the _http://{{ip}}/CattleMonitoring/accessSensor/_ endpoint. The API of the app is:
 
 | Paths                             | Methods       |
 | -------------                     |:-------------:| 
