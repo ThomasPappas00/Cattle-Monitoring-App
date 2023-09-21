@@ -42,7 +42,7 @@ Microsoft SQL Server is used for the database, Java for the HTTP server and the 
 
 ![image](https://github.com/ThomasPappas00/Cattle-Monitoring-App/assets/75483971/4c4f8119-2bca-4684-9f1b-e0f929e1939a)
 
-## Runtime 
+## Instructions
 A simulated farm starts when executing the _initFarm_ module. Three milk pumps are created and a number of animals (belonging in various herds) with random history, random sensor data and a random location inside the farm. The _Simulator_ module gives life to the farm. Animals move around, have their colar sensor data changed and go for milking at the three pumps. The _AccessSensor_ servlet handles requests for the _client_ to get a sensor with specific id, add a new sensor to the system and delete a sensor using the _http://{{ip}}:8080/CattleMonitoring/accessSensor/_ endpoint. The API of the app is:
 
 | Paths                             | Methods       |
@@ -54,7 +54,7 @@ A simulated farm starts when executing the _initFarm_ module. Three milk pumps a
 | /CattleMonitoring/accessMilkPump/   | GET |
 | /CattleMonitoring/accessMilkPump/  | GET   | 
 
-### Instructions
+### Runtime
 Microsoft SQL Server and Java Runtime Environment are prerequisites for the machine that hosts the back-end. The database should first be enabled as a windows service (MSSQLSERVER → Start). Then, open the project in eclipse and put the 4 jars in the classpath of the project files located in the C:\...\CattleMonitoring\WebContent\WEB INF\lib folder. JDBC is the driver enabling the communication with the database, while the Jackson libraries are used for converting objects to JSON and vice versa. Next, we create a Tomcat v9.0 Server at localhost from eclipse and add the CattleMonitoring project to the server. We start the server (Start) and the see the message _INFO: Server startup in [xxxx] milliseconds_ in the eclipse console. To create a new farm with x number of animals we run InitFarm and change numOfAnimals = x. To start the emulator and begin life on the farm we run the _Simulator_. The server is now ready to serve requests.
 
 ## Demo
